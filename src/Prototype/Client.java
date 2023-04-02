@@ -17,10 +17,12 @@ public class Client {
         apr22Student.setAverageBatchPsp(90.0);
         studentRegistry.register("May22", may22Student);
 
-        IntelligentStudent intelligentStudent = new IntelligentStudent();
-        intelligentStudent.setBatch("Jun22");
-        intelligentStudent.setAverageBatchPsp(85.0);
-        studentRegistry.register("intelligentStudentPrototype", intelligentStudent);
+        IntelligentStudent apr22IntelligentStudent = new IntelligentStudent();
+        apr22IntelligentStudent.setAverageBatchPsp(89.0);
+        apr22IntelligentStudent.setBatch("April 22");
+        apr22IntelligentStudent.setIq(180);
+        studentRegistry.register("apr22IntelligentStudent", apr22IntelligentStudent);
+
     }
 
     public static void main(String[] args) {
@@ -44,8 +46,13 @@ public class Client {
         rapheal.setAge(25);
         rapheal.setStudentPsp(82.0);
 
+        Student deepak = studentRegistry.get("apr22IntelligentStudent").clone();
+        deepak.setName("Deepak");
+        deepak.setAge(27);
+        deepak.setStudentPsp(75);
+        // ((IntelligentStudent)deepak).iq = 180;
+
+
         System.out.println("DEBUG");
-
-
     }
 }
